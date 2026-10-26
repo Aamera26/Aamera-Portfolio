@@ -1,0 +1,370 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Aamera Arshin</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: soft grey-green hero with a bar-and-line graphic, figure cards overlapping its edge, then a timeline, project cards and chip-style skills on a pale cool ground. */
+:root {
+  --bg: #f5f6f6;
+  --card: #ffffff;
+  --fg: #1d2528;
+  --muted: #5e6a6e;
+  --line: #dde2e3;
+  --accent: #3f6b73;
+  --chip: #e9eeee;
+  --hero: #e6ecec;
+  --hero-fg: #1d2528;
+  --hero-soft: #4b585c;
+  --hero-faint: rgba(29, 37, 40, 0.12);
+  --pop: #b9cfcb;
+  --pop-ink: #1d2528;
+  --art-bar: #c7d6d6;
+  --shadow: 0 1px 2px rgba(29, 37, 40, 0.04);
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121819; --card: #1a2123; --fg: #e6ecec; --muted: #9aa8ab; --line: #2b3639;
+    --accent: #8fb8bf; --chip: #222c2f; --hero: #182123; --hero-fg: #e6ecec; --hero-soft: #a9b8bb;
+    --hero-faint: rgba(230, 236, 236, 0.14); --pop: #3f5d61; --pop-ink: #e6ecec; --art-bar: #2c3b3e;
+    --shadow: none; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121819; --card: #1a2123; --fg: #e6ecec; --muted: #9aa8ab; --line: #2b3639;
+  --accent: #8fb8bf; --chip: #222c2f; --hero: #182123; --hero-fg: #e6ecec; --hero-soft: #a9b8bb;
+  --hero-faint: rgba(230, 236, 236, 0.14); --pop: #3f5d61; --pop-ink: #e6ecec; --art-bar: #2c3b3e;
+  --shadow: none; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+}
+.gutter {
+  max-width: 1080px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.05; }
+.mono { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.02em; }
+
+/* Hero */
+.hero { background: var(--hero); color: var(--hero-fg); overflow: hidden; position: relative; }
+.hero .gutter { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: 32px 48px; align-items: center; padding-block: 64px 112px; }
+.kicker { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 20px; color: var(--hero-soft); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; }
+.kicker::before { content: ""; width: 28px; height: 3px; background: var(--accent); border-radius: 2px; }
+h1 { font-size: clamp(3rem, 9vw, 5.75rem); font-weight: 800; letter-spacing: -0.03em; }
+h1 em { font-style: normal; color: var(--accent); }
+.role { font-family: var(--font-display); font-size: clamp(1.2rem, 3vw, 1.65rem); font-weight: 500; margin: 16px 0 0; color: var(--accent); }
+.summary { max-width: 56ch; margin: 22px 0 0; font-size: 1.0625rem; color: var(--hero-soft); }
+.contact { display: flex; flex-wrap: wrap; gap: 10px; margin: 30px 0 0; padding: 0; list-style: none; }
+.contact li, .contact a.pill {
+  display: inline-flex; align-items: center; gap: 10px; min-width: 0; max-width: 100%;
+  padding: 8px 14px; border-radius: 999px; border: 1px solid var(--hero-faint);
+  background: transparent; color: var(--hero-fg); text-decoration: none; overflow-wrap: anywhere;
+}
+.contact a.pill:hover { border-color: var(--accent); }
+.copy {
+  font-family: var(--font-mono); font-size: 11px; cursor: pointer; flex: none;
+  background: var(--pop); color: var(--pop-ink); border: 0; border-radius: 999px; padding: 3px 10px; font-weight: 500;
+}
+.art { width: 100%; max-width: 380px; justify-self: end; }
+.art svg { display: block; width: 100%; height: auto; }
+
+/* Figures */
+.figures { position: relative; margin-top: -64px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.fig { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 20px 18px; box-shadow: var(--shadow); min-width: 0; }
+.fig b { display: block; font-family: var(--font-display); font-size: 2.75rem; font-weight: 800; line-height: 1; letter-spacing: -0.02em; color: var(--accent); font-variant-numeric: tabular-nums; }
+.fig span { display: block; margin-top: 10px; color: var(--muted); font-size: 14px; line-height: 1.4; }
+
+/* Sections */
+section { padding-top: 72px; }
+.eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+.eyebrow h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; }
+.eyebrow::after { content: ""; flex: 1; height: 2px; background: var(--line); }
+
+/* Timeline */
+.timeline { list-style: none; margin: 0; padding: 0 0 0 32px; position: relative; display: flex; flex-direction: column; gap: 24px; }
+.timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+.job { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px 26px; min-width: 0; }
+.job::before { content: ""; position: absolute; left: -32px; top: 30px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 4px solid var(--accent); }
+.job:first-child::before { background: var(--pop); }
+.job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; align-items: baseline; }
+.job h3 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; }
+.period { color: var(--accent); font-weight: 500; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.org { margin: 6px 0 0; color: var(--muted); }
+.job ul { margin: 16px 0 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 8px; max-width: 70ch; }
+.job li::marker { color: var(--accent); }
+.now { display: inline-block; margin-left: 10px; padding: 2px 9px; border-radius: 999px; background: var(--pop); color: var(--pop-ink); font-family: var(--font-mono); font-size: 11px; font-weight: 500; vertical-align: middle; letter-spacing: 0.06em; }
+
+/* Projects */
+.projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.project { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.project-top { background: var(--hero); border-bottom: 1px solid var(--line); color: var(--hero-fg); padding: 22px 24px; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.project-top h3 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.01em; }
+.project-top p { margin: 6px 0 0; color: var(--hero-soft); font-size: 14px; }
+.live { flex: none; display: inline-flex; align-items: center; gap: 7px; padding: 3px 10px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; }
+.live::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.project-body { padding: 20px 24px 24px; display: flex; flex-direction: column; gap: 16px; flex: 1; }
+.project-body ul { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 8px; }
+.project-body li::marker { color: var(--accent); }
+.visit { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: var(--pop); color: var(--pop-ink); font-weight: 600; text-decoration: none; overflow-wrap: anywhere; }
+.visit:hover { filter: brightness(0.97); }
+
+/* Skills */
+.skill-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.group { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px; min-width: 0; }
+.group.wide { grid-column: 1 / -1; }
+.group h3 { font-size: 1.125rem; font-weight: 700; margin-bottom: 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.chips li { padding: 5px 12px; border-radius: 999px; background: var(--chip); font-size: 14px; line-height: 1.4; }
+
+/* Education */
+.edu { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.edu-list, .cert-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+.edu-list li span { display: block; color: var(--muted); font-size: 14px; }
+.edu-list li b, .cert-list li { font-weight: 600; }
+.cert-list li { display: flex; align-items: center; gap: 12px; }
+.cert-list li::before { content: ""; width: 12px; height: 12px; border-radius: 3px; background: var(--pop); flex: none; }
+
+footer { margin-top: 80px; padding-block: 28px; border-top: 1px solid var(--line); color: var(--muted); }
+
+@media (max-width: 860px) {
+  .hero .gutter { grid-template-columns: minmax(0, 1fr); padding-block: 48px 96px; }
+  .art { justify-self: start; max-width: 300px; }
+  .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .projects, .skill-groups, .edu { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 520px) {
+  .job { padding: 20px 18px; }
+  .timeline { padding-left: 26px; }
+  .job::before { left: -26px; }
+  .timeline::before { left: 1px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bar { transform-origin: 50% 100%; animation: grow 0.9s cubic-bezier(.2, .8, .2, 1) both; }
+  .bar:nth-child(2) { animation-delay: 0.05s; } .bar:nth-child(3) { animation-delay: 0.1s; }
+  .bar:nth-child(4) { animation-delay: 0.15s; } .bar:nth-child(5) { animation-delay: 0.2s; }
+  .bar:nth-child(6) { animation-delay: 0.25s; } .bar:nth-child(7) { animation-delay: 0.3s; }
+  @keyframes grow { from { transform: scaleY(0.05); } to { transform: scaleY(1); } }
+  .fig, .project, .job { transition: transform .2s ease; }
+  .fig:hover, .project:hover { transform: translateY(-3px); }
+}
+</style>
+
+<header class="hero">
+  <div class="gutter">
+    <div>
+      <p class="kicker mono">Portfolio · Pune, India</p>
+      <h1>Aamera<br><em>Arshin</em></h1>
+      <p class="role">Business Analyst | Data Analyst</p>
+      <p class="summary">Five-plus years in business analysis, reporting and requirements documentation across multi-site, operations-heavy businesses. I own revenue and P&amp;L tracking for five regional centres at Unacademy and turn the numbers into target, budget and strategy recommendations for leadership.</p>
+      <ul class="contact mono">
+        <li><span id="email">aamera.arshin@gmail.com</span><button class="copy" data-copy="email" type="button">Copy</button></li>
+        <li><a class="pill" href="https://linkedin.com/in/aamera-arshin-a3sk2606" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="360" height="300" rx="20" fill="var(--card)" stroke="var(--line)"/>
+        <g fill="var(--line)">
+          <rect x="0" y="74" width="360" height="1.5"/><rect x="0" y="148" width="360" height="1.5"/><rect x="0" y="222" width="360" height="1.5"/>
+        </g>
+        <g>
+          <rect class="bar" x="28" y="190" width="30" height="82" rx="5" fill="var(--art-bar)"/>
+          <rect class="bar" x="76" y="160" width="30" height="112" rx="5" fill="var(--art-bar)"/>
+          <rect class="bar" x="124" y="176" width="30" height="96" rx="5" fill="var(--art-bar)"/>
+          <rect class="bar" x="172" y="126" width="30" height="146" rx="5" fill="var(--art-bar)"/>
+          <rect class="bar" x="220" y="104" width="30" height="168" rx="5" fill="var(--art-bar)"/>
+          <rect class="bar" x="268" y="78" width="30" height="194" rx="5" fill="var(--pop)"/>
+          <rect class="bar" x="316" y="52" width="16" height="220" rx="5" fill="var(--art-bar)"/>
+        </g>
+        <polyline points="43,170 91,138 139,152 187,104 235,82 283,52 324,30" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="324" cy="30" r="7" fill="var(--card)" stroke="var(--accent)" stroke-width="3"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main class="gutter">
+  <div class="figures">
+    <div class="fig"><b>5+</b><span>years in business and data analysis</span></div>
+    <div class="fig"><b>5</b><span>regional centres on revenue and P&amp;L tracking</span></div>
+    <div class="fig"><b>10+</b><span>executive Power BI dashboards</span></div>
+    <div class="fig"><b>25%</b><span>shorter reporting cycle through automation</span></div>
+  </div>
+
+  <section id="experience">
+    <div class="eyebrow"><h2>Experience</h2></div>
+    <ol class="timeline">
+      <li class="job">
+        <div class="job-head">
+          <h3>Business Analyst<span class="now">NOW</span></h3>
+          <span class="period mono">May 2025 – Present</span>
+        </div>
+        <p class="org">Unacademy · Pune</p>
+        <ul>
+          <li>Own revenue analysis and P&amp;L tracking across 5 regional centres, and recommend targets, budgets and resource allocation to leadership.</li>
+          <li>Track team performance daily and monthly against targets, identify strong and weak performers, and set revised targets.</li>
+          <li>Led the half-yearly performance analysis across 5 centres and found walk-in volume to be the key revenue driver.</li>
+          <li>Built and maintain 10+ executive Power BI dashboards.</li>
+          <li>Cut reporting cycle time by 25% by automating reports with Excel Macros and Power Query.</li>
+          <li>Write BRDs, FRDs and user stories. Work with sales, finance and accounts teams to validate documentation, track collections and resolve discrepancies.</li>
+          <li>Created SOPs for admissions, refunds, hiring, travel reimbursement and leave policy.</li>
+          <li>Responsible for IT asset management.</li>
+        </ul>
+      </li>
+      <li class="job">
+        <div class="job-head">
+          <h3>Business Analyst</h3>
+          <span class="period mono">Sep 2024 – May 2025</span>
+        </div>
+        <p class="org">Meghe Group of Schools · Akola</p>
+        <ul>
+          <li>Gathered requirements from stakeholders and turned them into actionable insights.</li>
+          <li>Analysed operational and academic data to find process improvements, tracked operational KPIs and recommended changes.</li>
+          <li>Prepared reports and dashboards for management and worked with cross-functional teams to improve reporting accuracy.</li>
+        </ul>
+      </li>
+      <li class="job">
+        <div class="job-head">
+          <h3>Assistant Manager, Data &amp; Operations</h3>
+          <span class="period mono">Jul 2021 – Sep 2024</span>
+        </div>
+        <p class="org">RK Agro Plast Pvt. Ltd. · Akola</p>
+        <ul>
+          <li>Managed data operations, documentation and reporting in a manufacturing and agribusiness environment.</li>
+          <li>Analysed operational data to support decisions, optimise resource use and reduce costs.</li>
+          <li>Coordinated cross-functional teams to meet deadlines, supported operations and inventory planning, and handled client and stakeholder communication.</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section id="projects">
+    <div class="eyebrow"><h2>Projects</h2></div>
+    <div class="projects">
+      <article class="project">
+        <div class="project-top">
+          <div>
+            <h3>Student Self-Service Portal</h3>
+            <p>Unacademy</p>
+          </div>
+          <span class="live">LIVE</span>
+        </div>
+        <div class="project-body">
+          <ul>
+            <li>Built independently with Google Apps Script, Google Sheets, HTML and Netlify. Used by multiple Unacademy centres.</li>
+            <li>Features: automated result parsing, attendance tracking with a calendar view, and a print option.</li>
+            <li>Wrote the user stories and led UAT before rollout to five centres.</li>
+          </ul>
+          <a class="visit" href="https://unacademy-studentportal.netlify.app" target="_blank" rel="noopener">Open the portal ↗</a>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project-top">
+          <div>
+            <h3>Thread Elite</h3>
+            <p>E-commerce website</p>
+          </div>
+          <span class="live">LIVE</span>
+        </div>
+        <div class="project-body">
+          <ul>
+            <li>Worked on the UI and testing.</li>
+          </ul>
+          <a class="visit" href="https://threadelite.com" target="_blank" rel="noopener">Visit threadelite.com ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="eyebrow"><h2>Skills</h2></div>
+    <div class="skill-groups">
+      <div class="group wide">
+        <h3>Business analysis</h3>
+        <ul class="chips">
+          <li>BRD</li><li>FRD</li><li>User Stories</li><li>Use Cases</li><li>Requirements Gathering</li><li>Gap Analysis</li><li>SDLC</li><li>UAT</li><li>Process Mapping</li><li>Stakeholder Management</li><li>SOP Documentation</li><li>KPI Tracking</li><li>Agile</li><li>Scrum</li>
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Finance &amp; performance</h3>
+        <ul class="chips">
+          <li>Revenue Analysis</li><li>P&amp;L Analysis</li><li>Target vs Achievement</li><li>Budget and Target Planning</li><li>Business Strategy</li>
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Reporting &amp; analytics</h3>
+        <ul class="chips">
+          <li>Power BI</li><li>Advanced Excel</li><li>Pivot Tables</li><li>VLOOKUP / XLOOKUP</li><li>Macros</li><li>Power Query</li><li>Data Visualization</li><li>Reporting Automation</li><li>Python</li>
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Build &amp; platforms</h3>
+        <ul class="chips">
+          <li>Google Apps Script</li><li>HTML / CSS / JavaScript</li><li>Salesforce</li>
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Domains</h3>
+        <ul class="chips">
+          <li>Manufacturing</li><li>Education</li><li>E-commerce</li><li>Finance</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="eyebrow"><h2>Education &amp; certifications</h2></div>
+    <div class="edu">
+      <div class="group">
+        <h3>Education</h3>
+        <ul class="edu-list">
+          <li><b>MBA, Finance</b><span>Yashwantrao Chavan Maharashtra Open University (YCMOU), Nashik · 2024 – 2026</span></li>
+          <li><b>B.E., Computer Science</b><span>Vidarbha Institute of Technology, Nagpur University · 2017 – 2020</span></li>
+          <li><b>Diploma, Computer Engineering</b><span>Bhonsla Polytechnic, Akola · 2015 – 2017</span></li>
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Certifications</h3>
+        <ul class="cert-list">
+          <li>Salesforce Certified Platform Developer I</li>
+          <li>Business Analyst Certification</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="mono">Aamera Arshin · Business Analyst | Data Analyst · Pune, India</footer>
+</main>
+
+<script>
+document.querySelectorAll('.copy').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var el = document.getElementById(btn.getAttribute('data-copy'));
+    var text = el.textContent;
+    var reset = function (label) {
+      btn.textContent = label;
+      setTimeout(function () { btn.textContent = 'Copy'; }, 1500);
+    };
+    var fallback = function () {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      reset('Selected');
+    };
+    try {
+      navigator.clipboard.writeText(text).then(function () { reset('Copied'); }, fallback);
+    } catch (e) { fallback(); }
+  });
+});
+</script>
+
+</body></html>
